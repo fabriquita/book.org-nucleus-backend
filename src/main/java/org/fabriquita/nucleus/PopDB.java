@@ -1,5 +1,6 @@
 package org.fabriquita.nucleus;
 
+import org.fabriquita.nucleus.popdb.BookPopDb;
 import org.fabriquita.nucleus.popdb.GroupPopDB;
 import org.fabriquita.nucleus.popdb.ResourcePopDB;
 import org.fabriquita.nucleus.popdb.RolePopDB;
@@ -33,6 +34,9 @@ public class PopDB implements CommandLineRunner {
     @Autowired
     UserPopDB userPopDB;
 
+    @Autowired
+    BookPopDb bookPopDb;
+
     public static boolean isPopDBExecuted = false;
 
     public static void main(String[] args) {
@@ -48,6 +52,7 @@ public class PopDB implements CommandLineRunner {
             resourcePopDB.popDB();
             roleResourcePopDB.popDB();
             userPopDB.popDB();
+            bookPopDb.popDB();
             System.exit(0);
         }
     }
