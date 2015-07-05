@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.Type;
+
 @Entity
 public class Book extends Mappable {
 
@@ -19,6 +21,7 @@ public class Book extends Mappable {
 
     String collection;
 
+    @Type(type="text")
     String content;
 
     public Long getId() {
