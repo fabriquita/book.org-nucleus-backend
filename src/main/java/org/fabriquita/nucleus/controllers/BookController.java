@@ -23,7 +23,7 @@ public class BookController {
     @Autowired
     BookService bookService;
 
-    @RequiresAuthentication
+    //@RequiresAuthentication
     @RequestMapping(value = "/", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Page<Book> list(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
         if (page == null) {
@@ -37,7 +37,7 @@ public class BookController {
         return bookService.list(page, size);
     }
 
-    @RequiresAuthentication
+    //@RequiresAuthentication
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Book get(@PathVariable(value = "id") Long id) {
         return bookService.get(id);
